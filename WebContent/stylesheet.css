@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 
-header {
+header div.lijn {
 	display: flex;
 	flex-flow: row nowrap;
 	align-content: center;
@@ -12,17 +12,17 @@ header {
 	height: 200px;
 }
 
-header div.afbeelding {
+header div.lijn div.afbeelding {
 	flex: 1;
 	max-width: 200px;
 }
 
-header div.title {
+header div.lijn div.title {
 	flex: 1;
 	text-align: center;
 }
 
-header div.title hr {
+header  div.lijn div.title hr {
 	width: 162px;
 }
 
