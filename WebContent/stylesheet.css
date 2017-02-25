@@ -51,7 +51,7 @@ nav ul li:last-child {
 }
 
 main {
-	margin-top: 10px;
+	margin-top: 50px;
 }
 
 main table {
@@ -66,4 +66,8 @@ main table thead {
 
 main table tbody tr:nth-child(2n) {
 	background-color: lightgray;
+}
+
+footer {
+	margin-top: 50px;
 }
