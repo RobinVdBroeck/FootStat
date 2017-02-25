@@ -30,15 +30,23 @@
 		</header>
 		<main>
 			<form>
-				<!-- Dropdown thuisploeg -->
-				Thuisploeg  
-				<input type="number" name="thuisscore"/>
+				<select name="thuisploeg" required>
+					<option value="rscanderlecht">RSC Anderlecht</option>
+					<option value="clubbrugge">Club Brugge</option>
+					<option value="zultewaregem">Zulte Waregem</option>
+					<option value="kvoostende">KV Oostende</option>				
+				</select>
+				<input type="number" name="thuisscore" min="0" max="99" required />
 				-
-				<input type="number" name="uitscore" />
-				Uitploeg
-				<!-- Dropdown uitploeg -->
+				<input type="number" name="uitscore"  min="0" max="99" required />
+				<select name="uitploeg" required>
+					<option value="rscanderlecht">RSC Anderlecht</option>
+					<option value="clubbrugge">Club Brugge</option>
+					<option value="zultewaregem">Zulte Waregem</option>
+					<option value="kvoostende">KV Oostende</option>				
+				</select>
 				<br />
-				<input type="submit" value="verzenden">
+				<input type="submit" value="verzenden" required />
 			</form>
 		</main>
 		<footer>
