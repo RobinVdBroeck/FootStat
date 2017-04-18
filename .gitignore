@@ -1,4 +1,10 @@
 .settings/
 build/
+.idea/
+.gitignore/
+FootStat.iml
+FootStat.ipr
+FootStat.iws
 .classpath
 .project
+.gradle/
