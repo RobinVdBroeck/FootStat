@@ -12,25 +12,25 @@ public class InMemoryDatabase {
     private ArrayList<Team> teams;
     private ArrayList<Match> matches;
 
-    InMemoryDatabase() {
+    public InMemoryDatabase() {
         competitions = new ArrayList<Competition>();
         teams = new ArrayList<Team>();
         matches = new ArrayList<Match>();
     }
 
-    boolean isCompetitionInDatabase(Competition competition) {
+    public boolean isCompetitionInDatabase(Competition competition) {
         return getAllCompetitions().contains(competition);
     }
 
-    boolean isTeamInDatabase(Team team) {
+    public boolean isTeamInDatabase(Team team) {
         return getAllTeams().contains(team);
     }
 
-    void addCompetition(Competition competition) {
+    public void addCompetition(Competition competition) {
         competitions.add(competition);
     }
 
-    void addTeam(Team team) {
+    public void addTeam(Team team) {
         Competition competition = team.getCompetition();
         if(!isCompetitionInDatabase(competition)) {
             throw new IllegalStateException("The competition is not in the database");
@@ -38,7 +38,7 @@ public class InMemoryDatabase {
         teams.add(team);
     }
 
-    void addMatch(Match match) {
+    public void addMatch(Match match) {
         Team[] sides = new Team[] {match.getHomeTeam(), match.getAwayTeam()};
 
         for(Team team: sides) {
@@ -50,15 +50,15 @@ public class InMemoryDatabase {
         matches.add(match);
     }
 
-    ArrayList<Competition> getAllCompetitions() {
+    public ArrayList<Competition> getAllCompetitions() {
         return competitions;
     }
 
-    ArrayList<Team> getAllTeams() {
+    public ArrayList<Team> getAllTeams() {
         return teams;
     }
 
-    ArrayList<Match> getAllMatches() {
+    public ArrayList<Match> getAllMatches() {
         return matches;
     }
 }

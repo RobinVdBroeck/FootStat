@@ -9,7 +9,7 @@ public class Competition {
 	 * 
 	 * @param name The name of the competition (Ex. Jupiler Pro League)
 	 */
-	Competition(String name) {
+	public Competition(String name) {
 		setName(name);
 	}
 	
@@ -17,7 +17,7 @@ public class Competition {
 	 * The name of the competition
 	 * @return The name of the competition
 	 */
-	String getName() {
+	public String getName() {
 		return name;
 	}
 
@@ -26,7 +26,7 @@ public class Competition {
 	 * @param name
 	 * @throws IllegalArgumentException When the name given is either null or empty
 	 */
-	void setName(String name) throws IllegalArgumentException {
+	public void setName(String name) throws IllegalArgumentException {
 		if(name == null) {
 			throw new IllegalArgumentException("The name cannot be null");
 		}

@@ -14,36 +14,36 @@ public class Match {
 	}
 
 	/* GETTERS */
-	Team getHomeTeam() {
+	public Team getHomeTeam() {
 		return homeTeam;
 	}
-	Team getAwayTeam() {
+	public Team getAwayTeam() {
 		return awayTeam;
 	}
-	int getHomeScore() {
+	public int getHomeScore() {
 		return homeScore;
 	}
-	int getOutScore() {
+	public int getOutScore() {
 		return outScore;
 	}
 
 	/* SETTERS */
-	void setHomeTeam(Team homeTeam) {
+	public void setHomeTeam(Team homeTeam) {
 		if(homeTeam == null || homeTeam == this.getAwayTeam()) {
 			throw new IllegalArgumentException();
 		}
 		this.homeTeam = homeTeam;
 	}
-	void setAwayTeam(Team awayTeam) {
+	public void setAwayTeam(Team awayTeam) {
 		if(awayTeam == null) {
 			throw new IllegalArgumentException();
 		}
 		this.awayTeam = awayTeam;
 	}
-	void setHomeScore(int homeScore) {
+	public void setHomeScore(int homeScore) {
 		this.homeScore = homeScore;
 	}
-	void setOutScore(int outScore) {
+	public void setOutScore(int outScore) {
 		this.outScore = outScore;
 	}
 	
