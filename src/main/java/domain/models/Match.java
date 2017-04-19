@@ -7,47 +7,43 @@ public class Match {
 	private int outScore;
 	
 	public Match(Team homeTeam, Team awayTeam, int homeScore, int outScore) {
-		this.setHomeTeam(homeTeam);
-		this.setAwayTeam(awayTeam);
-		this.setHomeScore(homeScore);
-		this.setOutScore(outScore);
+		setHomeTeam(homeTeam);
+		setAwayTeam(awayTeam);
+		setHomeScore(homeScore);
+		setOutScore(outScore);
 	}
-	
-	public Team getHomeTeam() {
+
+	/* GETTERS */
+	Team getHomeTeam() {
 		return homeTeam;
 	}
-	
-	public void setHomeTeam(Team homeTeam) {
+	Team getAwayTeam() {
+		return awayTeam;
+	}
+	int getHomeScore() {
+		return homeScore;
+	}
+	int getOutScore() {
+		return outScore;
+	}
+
+	/* SETTERS */
+	void setHomeTeam(Team homeTeam) {
 		if(homeTeam == null || homeTeam == this.getAwayTeam()) {
 			throw new IllegalArgumentException();
 		}
 		this.homeTeam = homeTeam;
 	}
-
-	public Team getAwayTeam() {
-		return awayTeam;
-	}
-
-	public void setAwayTeam(Team awayTeam) {
+	void setAwayTeam(Team awayTeam) {
 		if(awayTeam == null) {
 			throw new IllegalArgumentException();
 		}
 		this.awayTeam = awayTeam;
 	}
-
-	public int getHomeScore() {
-		return homeScore;
-	}
-
-	public void setHomeScore(int homeScore) {
+	void setHomeScore(int homeScore) {
 		this.homeScore = homeScore;
 	}
-
-	public int getOutScore() {
-		return outScore;
-	}
-
-	public void setOutScore(int outScore) {
+	void setOutScore(int outScore) {
 		this.outScore = outScore;
 	}
 	
@@ -56,10 +52,10 @@ public class Match {
 	 * The second element than equals the away team received for the match.
 	 */
 	public int[] calculatePoints() {
-		if(this.getHomeScore() > this.getOutScore()) {
+		if(getHomeScore() > getOutScore()) {
 			return new int[] {3, 0};
 		}
-		if (this.getHomeScore() == this.getOutScore()) {
+		if (getHomeScore() == getOutScore()) {
 			return new int[] {1, 1};
 		}
 		return new int[] {0, 3};
