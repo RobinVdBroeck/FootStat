@@ -1,4 +1,4 @@
-package be.footstat.domain.models;
+package domain.models;
 
 public class Team {
 	private Competition competition;

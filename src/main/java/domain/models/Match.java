@@ -1,12 +1,12 @@
-package be.footstat.domain.models;
+package domain.models;
 
 public class Match {
 	private Team homeTeam;
 	private Team awayTeam;
-	private short homeScore;
-	private short outScore;
+	private int homeScore;
+	private int outScore;
 	
-	public Match(Team homeTeam, Team awayTeam, short homeScore, short outScore) {
+	public Match(Team homeTeam, Team awayTeam, int homeScore, int outScore) {
 		this.setHomeTeam(homeTeam);
 		this.setAwayTeam(awayTeam);
 		this.setHomeScore(homeScore);
@@ -35,19 +35,19 @@ public class Match {
 		this.awayTeam = awayTeam;
 	}
 
-	public short getHomeScore() {
+	public int getHomeScore() {
 		return homeScore;
 	}
 
-	public void setHomeScore(short homeScore) {
+	public void setHomeScore(int homeScore) {
 		this.homeScore = homeScore;
 	}
 
-	public short getOutScore() {
+	public int getOutScore() {
 		return outScore;
 	}
 
-	public void setOutScore(short outScore) {
+	public void setOutScore(int outScore) {
 		this.outScore = outScore;
 	}
 	
@@ -55,14 +55,14 @@ public class Match {
 	 * @return Array with two elements. First element equals the points the home team received for the match.
 	 * The second element than equals the away team received for the match.
 	 */
-	public short[] calculatePoints() {
+	public int[] calculatePoints() {
 		if(this.getHomeScore() > this.getOutScore()) {
-			return new short[] {3, 0};
+			return new int[] {3, 0};
 		}
 		if (this.getHomeScore() == this.getOutScore()) {
-			return new short[] {1, 1};
+			return new int[] {1, 1};
 		}
-		return new short[] {0, 3};
+		return new int[] {0, 3};
 		
 	}
 }
