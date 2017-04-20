@@ -6,6 +6,7 @@ import domain.models.Team;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class InMemoryDatabase {
     private ArrayList<Competition> competitions;
@@ -59,6 +60,27 @@ public class InMemoryDatabase {
     }
 
     public ArrayList<Match> getAllMatches() {
+        return matches;
+    }
+
+    public ArrayList<Team> getAllTeamsInACompetition(Competition competition) {
+        ArrayList<Team> teams = new ArrayList<Team>();
+        for(Team team: getAllTeams()) {
+            if(team.getCompetition().equals(competition)) {
+                teams.add(team);
+            }
+        }
+        return teams;
+    }
+
+    public ArrayList<Match> getAllMatchesInACompetion(Competition competition) {
+        ArrayList<Match> matches = new ArrayList<Match>();
+        for(Match match: getAllMatches()) {
+            if(match.getHomeTeam().getCompetition().equals(competition)
+                    || match.getAwayTeam().getCompetition().equals(competition)) {
+                matches.add(match);
+            }
+        }
         return matches;
     }
 }
