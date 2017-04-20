@@ -11,17 +11,14 @@
 	<div class="container">
 		<%@ include file="header.jsp"%>
 		<main>
-			<form>
+			<form method="POST">
+				<input type="text" name="action" value="ploeg-toevoegen" hidden />
 				<p>
-					<label for="kortenaam">Korte naam: </label>
-					<input type="text" name="kortenaam" id="kortenaam" />
+					<label for="naam">Naam: </label>
+					<input type="text" name="naam" id="naam" required />
 				</p>
 				<p>
-					<label for="volledigenaam">Volledige naam: </label>
-					<input type="text" name="volledigenaam" id="volledigenaam" />
-				</p>
-				<p>
-					<input type="submit" value="verzenden" required />
+					<input type="submit" value="verzenden" />
 				</p>
 			</form>
 		</main>

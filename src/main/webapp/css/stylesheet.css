@@ -54,17 +54,17 @@ main {
 	margin-top: 50px;
 }
 
-main table {
+main table.klassement {
 	clear: both;
 	width: 100%;
 }
 
-main table thead {
+main table.klassement thead {
 	background-color: black;
 	color: white;
 }
 
-main table tbody tr:nth-child(2n) {
+main table.klassement tbody tr:nth-child(2n) {
 	background-color: lightgray;
 }
 

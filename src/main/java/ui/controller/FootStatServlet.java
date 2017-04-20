@@ -27,8 +27,6 @@ public class FootStatServlet extends HttpServlet {
         // Init database with data
         database = new InMemoryDatabase() {{
             addCompetition(comp);
-            addTeam(new Team(comp, "Anderlecht"));
-            addTeam(new Team(comp, "Brugge"));
         }};
     }
 
@@ -52,6 +50,26 @@ public class FootStatServlet extends HttpServlet {
             default:
                 klassement(req, resp);
         }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        switch(req.getParameter("action")) {
+            case "ploeg-toevoegen":
+                String name = req.getParameter("naam");
+                if(name == null || name.trim().isEmpty()) {
+                    break;
+                }
+                Team team = new Team(comp, name);
+                database.addTeam(team);
+                break;
+            case "match-toevoegen":
+                break;
+            default:
+                break;
+        }
+
+        klassement(req, resp);
     }
 
     private void klassement(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
